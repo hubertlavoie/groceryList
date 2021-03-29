@@ -1,0 +1,70 @@
+.search-filter {
+  width: 70vw;
+  @media (min-width: 1000px) {
+    width: 48vw;
+  }
+  @media (min-width: 1500px) {
+    width: 40vw;
+  }
+  .searchInput {
+    background-color: var(--gray);
+    border: 0px;
+    color: #0c0d0d;
+    border-radius: 10px;
+    height: 35px;
+    padding: 0 10px;
+    :focus {
+      box-shadow: 0 2px 5px 0 rgb(12 13 13 / 16%), 0 1px 6px rgb(12 13 13 / 16%);
+    }
+  }
+  button {
+    padding: 0.6em 1.1em;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-style: italic;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--white);
+    &:active {
+      animation: 0.2s linear scaleDownOnFocus;
+    }
+  }
+
+  .searchAnItem {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-top: 12px;
+    z-index: 10;
+
+    input {
+      width: 100%;
+    }
+    .itemSearched {
+      display: none;
+      max-height: 400px;
+      overflow: scroll;
+      background: #fff;
+      width: 100%;
+      border: 1px solid #ddd;
+      .listItems {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+      }
+    }
+    .search-result-active {
+      display: block;
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+    .description {
+      font-size: 0.8rem;
+    }
+    .buttons {
+      padding: 0.5rem 0;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="search-filter"  {{on "mouseleave" disableSearchResult}} {{on "click" enableSearchResult}}>
+        <div class="searchAnItem" >
+        <input class="searchInput" placeholder="Type to search an item..." {{on "keydown" searchItem}}>
+            <div class="itemSearched {{if showSearchResults "search-result-active"}}">
+                {{#each shoppingCart.filteredGroceryItems as |item| }}
+                    <div class="listItems">
+                        <p class="title">{{item.title}}</p>
+                        <p class="description">{{item.description}}</p>
+                        <div class="buttons">
+                            <button {{on "click" (fn addItemToShoppingList item)}}>Add to shopping list</button>
+                            <button {{on "click" (fn addItemToShoppingCart item)}}>Add to cart</button>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+</div>

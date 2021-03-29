@@ -1,0 +1,36 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--gray);
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding: 15px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  input {
+    max-width: 50px;
+  }
+  button {
+    padding: 8px 9px;
+    border: 0px;
+    border-radius: 10px;
+    color: var(--white);
+    background-color: var(--primary);
+    transition: all 0.5s;
+    &:active {
+      animation: 0.2s linear scaleDownOnFocus;
+    }
+
+    cursor: pointer;
+    &.remove {
+      background-color: var(--secondary);
+    }
+  }
+
+  .title {
+    width: 100px;
+    font-weight: 600;
+  }
+}

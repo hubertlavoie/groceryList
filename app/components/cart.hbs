@@ -1,0 +1,14 @@
+<div class="cart {{if showCart "showCart"}}">
+    
+    <div class="container">
+        <div class="clear">
+            <p>Clear cart</p>
+            <div class="btn-delete" {{on "click" clearCart}}> <FaIcon @icon="trash" /></div>
+            <div class="btn-close" {{on "click" toggleCart}}> <FaIcon @icon="window-close" /></div>
+        </div>
+        <h2>Cart</h2>
+        {{#each shoppingCart.cartList as |item index|}}
+        <Product::Item  @product={{item}}  @cartItem={{true}} @id="{{index}}" />
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,26 @@
+*:focus {
+  outline: none;
+}
+body {
+  font-family: var(--font-family-sans-serif);
+  color: var(--dark);
+  background-color: var(--gray);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes scaleDownOnFocus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

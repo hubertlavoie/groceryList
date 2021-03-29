@@ -1,0 +1,27 @@
+{{#if shoppingCart.showCreateItem}}
+<div class="createItemContainer" >
+<div class="backdrop" {{on "click" hideCreateItem}}>
+
+</div>
+<div class="createItem">    
+    <div class="btn-close" {{on "click" hideCreateItem}}> <FaIcon @icon="window-close" /></div>
+    <h2>Create item</h2>
+    <div>
+        <label>Title</label>
+        {{input type="text" value=shoppingCart.newItem.title}}
+    </div>
+    <div>
+        <label>Description</label>
+        {{textarea rows="6" value=shoppingCart.newItem.description}}
+    </div>
+    <div class="inputNumber">
+        <label>Price</label>
+        {{input type="number" value=shoppingCart.newItem.price}}
+    </div>
+    <div class="btnContainer">
+        <button {{on "click" createItem}}>Create item</button>
+    </div>
+    
+</div>
+</div>
+{{/if}}

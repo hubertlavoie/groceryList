@@ -1,0 +1,30 @@
+<div class="item" >
+    <div class="title">{{@product.title}}</div>
+    {{#if @cartItem}}
+        <div class="qty">
+          Qty: {{quantity}}
+        </div>
+    {{/if}}
+    <div>
+        <div class="price">Price: {{curency @product.price}}</div>
+        {{#if @cartItem}}
+            <div class="total" >Total: {{curency total}}</div>
+        {{/if}}
+    </div>
+
+    
+    
+    {{#if @cartItem}}
+    <div>
+     <button {{on "click" (fn this.decreaseCountOfItemInCart @id)}}><FaIcon @icon="minus" @transform="shrink-2" /> </button>
+     <button {{on "click" (fn this.increaseCountOfItemInCart @id)}}><FaIcon @icon="plus" /> </button>
+     <button {{on "click" (fn this.deleteItemFromCart @id)}} class="remove"><FaIcon @icon="trash" /> </button>
+    </div>
+    {{else}}
+    <div>
+         <button {{on "click" (fn this.addItem @id)}}><FaIcon @icon="plus" /> </button>
+         <button {{on "click" (fn this.deleteItemFromShoppingList @id)}} class="remove"><FaIcon @icon="trash" /> </button>
+    </div>
+   
+    {{/if}}
+</div> 

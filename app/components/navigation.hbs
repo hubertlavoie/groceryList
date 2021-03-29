@@ -1,0 +1,11 @@
+<nav id="navigation">
+    <div class="groceryItems"> 
+        <div class="btn-nav" {{on "click" showCreateItemModal}}><FaIcon @icon="plus" /> </div>
+        <p>Create item</p>
+    </div>
+    <SearchFilter />
+    <div class="shoppingCart"> 
+        <p>Cart</p>
+        <div class="btn-nav" {{on "click" toggleCart}}><FaIcon @icon="shopping-cart" /></div>
+    </div>
+</nav>

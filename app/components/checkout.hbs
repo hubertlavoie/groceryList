@@ -1,0 +1,12 @@
+<div class="checkout">
+    <p class="subtotal">
+        <span>Subtotal:</span> {{curency this.subtotal}}
+    </p>
+    <p class="taxes">
+        <span>Taxes:</span> {{curency this.tax}}
+    </p>
+    <p class="total">
+        <span>Total:</span>  {{curency this.total}}
+    </p>
+    <button type="button" class="checkout-btn" {{on 'click' finishShopping}}>Finish shopping<FaIcon @icon="store-slash" style="margin-left:10px;" /></button>
+</div>

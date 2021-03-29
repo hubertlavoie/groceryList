@@ -1,0 +1,43 @@
+#navigation {
+  border-bottom: 1px solid var(--gray-light);
+  height: 60px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 1px 6px rgb(0 0 0 / 12%);
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+
+  .groceryItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .groceryItems p,
+  .shoppingCart p {
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: none;
+    @media (min-width: 800px) {
+      display: block;
+    }
+  }
+
+  .shoppingCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-nav {
+    padding: 6px 10px;
+    border: 0px;
+    border-radius: 10px;
+    margin: 0 10px;
+    color: var(--white);
+    cursor: pointer;
+    background-color: var(--primary);
+
+    &:active {
+      animation: 0.2s linear scaleDownOnFocus;
+    }
+  }
+}

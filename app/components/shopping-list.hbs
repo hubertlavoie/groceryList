@@ -1,0 +1,15 @@
+<div class="shopping-list">
+
+    <div class="clear">
+        <p>Clear list</p>
+        <div class="btn-delete" {{on "click" clearShoppingList}}> <FaIcon @icon="trash" /></div>
+    </div>
+    
+
+    <h2>Shopping list</h2>
+
+    {{#each shoppingCart.itemList as |item index|}}
+        <Product::Item  @product={{item}} @id="{{index}}"  />
+    {{/each}}
+
+</div>
