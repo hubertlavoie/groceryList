@@ -6,6 +6,6 @@
     <SearchFilter />
     <div class="shoppingCart"> 
         <p>Cart</p>
-        <div class="btn-nav" {{on "click" toggleCart}}><FaIcon @icon="shopping-cart" /></div>
+        <div class="btn-nav" {{on "click" toggleCart}}><FaIcon @icon="shopping-cart" /> <span>{{itemsInCart}}</span></div>
     </div>
 </nav>

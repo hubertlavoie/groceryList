@@ -1,4 +1,4 @@
-<div class="search-filter"  {{on "mouseleave" disableSearchResult}} {{on "click" enableSearchResult}}>
+<div class="search-filter"  {{on "click" enableSearchResult}}>
         <div class="searchAnItem" >
         <input class="searchInput" placeholder="Type to search an item..." {{on "keydown" searchItem}}>
             <div class="itemSearched {{if showSearchResults "search-result-active"}}">

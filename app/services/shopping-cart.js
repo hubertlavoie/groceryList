@@ -9,7 +9,6 @@ export default class ShoppingCartService extends Service {
   @tracked cartList = [];
   @tracked groceryItems = [];
   @tracked filteredGroceryItems = [];
-  @tracked searchSelected = false;
   @tracked newItem = {
     title: null,
     description: null,
@@ -69,7 +68,7 @@ export default class ShoppingCartService extends Service {
           }
         });
       })
-      .catch((e) => console.log(e));
+      .catch((err) => console.log(err));
   }
 
   searchItem(event) {
@@ -119,6 +118,15 @@ export default class ShoppingCartService extends Service {
       this.itemList.push({ ...item, quantity: 1 });
       this.itemList = [...this.itemList];
       set('list', this.itemList);
+    } else {
+      Swal.fire({
+        position: 'top-end',
+        text: 'Item already in the shopping list',
+        icon: 'warning',
+        showConfirmButton: false,
+        timer: 1500,
+        backdrop: false,
+      });
     }
   }
 
@@ -130,11 +138,8 @@ export default class ShoppingCartService extends Service {
     }
   }
 
-  switchSearchSelected() {
-    this.searchSelected = !this.searchSelected;
-  }
-
   enableSearchResult() {
+    this.detectClickOnWindow();
     this.showSearchResults = true;
   }
 
@@ -206,6 +211,14 @@ export default class ShoppingCartService extends Service {
 
   hideCreateItem() {
     this.showCreateItem = false;
+  }
+
+  detectClickOnWindow() {
+    window.addEventListener('click', (event) => {
+      if (!event.target.closest('.search-filter') && this.showSearchResults) {
+        this.disableSearchResult();
+      }
+    });
   }
 
   initialize() {

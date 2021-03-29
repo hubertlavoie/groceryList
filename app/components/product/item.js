@@ -27,6 +27,13 @@ export default class ProductItemComponent extends Component {
     return (this.args.product.quantity * this.args.product.price).toFixed(2);
   }
 
+  get isItemInCart() {
+    let item = this.args.product;
+    return this.shoppingCart.cartList.find((el) => {
+      return item.id == el.id;
+    });
+  }
+
   @action
   addItem(itemIndex) {
     this.shoppingCart.addItemToCart(itemIndex);

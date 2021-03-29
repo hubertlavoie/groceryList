@@ -1,5 +1,5 @@
 <div class="item" >
-    <div class="title">{{@product.title}}</div>
+    <div class="title  {{if isItemInCart "lineThrough"}}">{{@product.title}}</div>
     {{#if @cartItem}}
         <div class="qty">
           Qty: {{quantity}}

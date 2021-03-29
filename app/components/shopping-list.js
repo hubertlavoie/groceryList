@@ -4,6 +4,7 @@ import { action } from '@ember/object';
 
 export default class ShoppingListComponent extends Component {
   @service shoppingCart;
+
   @action
   clearShoppingList() {
     this.shoppingCart.clearShoppingList();
