@@ -213,7 +213,9 @@ export default class ShoppingCartService extends Service {
     get('cart').then((val) => {
       if (val != undefined && val.length > 0) {
         this.cartList = val;
-        this.showCart = true;
+        if (window.innerWidth > 1000) {
+          this.showCart = true;
+        }
       }
     });
     get('list').then((val) => {
